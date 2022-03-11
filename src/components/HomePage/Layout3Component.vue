@@ -68,7 +68,7 @@ const list_bigdeal = [
     position: relative;
     p {
       @include title-text;
-      margin: 58px 20px 58px 135px;
+      margin: 58px 30px 58px 115px;
     }
     .corner-border {
       filter: drop-shadow(0 0 3px $like-yellow);

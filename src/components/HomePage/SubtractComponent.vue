@@ -32,7 +32,6 @@
               food (1 Kee credit=S$1) <br />
               The Kee credits have no expiry date!
             </div>
-            
           </div>
         </div>
 
@@ -122,7 +121,7 @@
     .subtract-desc-contain {
       .subtract-desc {
         @include little-text;
-        max-width: 87.5vw;
+        max-width: 570px;
         text-align: center;
         margin: 0 auto;
         i {
@@ -160,13 +159,14 @@
         .item-content {
           position: absolute;
           z-index: 1;
-          width: 100%;
+          width: 75%;
           @include auto-number;
           h4,
           div {
             width: calc(100% - 25px);
             line-height: 25px;
             margin-left: 70px;
+            text-overflow: ellipsis;
           }
 
           .title {
@@ -192,14 +192,14 @@
           }
           .conversion {
             top: -85px;
-            right: 40px;
+            right: -45px;
             width: 110px;
             height: 110px;
           }
           .bag-money {
             width: 86px;
             height: 101px;
-            right: -35px;
+            right: -115px;
             bottom: -85px;
           }
         }
@@ -235,6 +235,11 @@
       .subtract-label {
         top: -37px;
         left: calc(50% - 28px / 2);
+      }
+    }
+    .subtract-desc-contain {
+      .subtract-desc {
+        max-width: 87.5vw;
       }
     }
     .subtract-list--contain {
@@ -275,13 +280,13 @@
             position: unset;
           }
           .coin {
-            margin-left: calc(50% - 86px /2);
+            margin-left: calc(50% - 86px / 2);
           }
           .conversion {
-            margin-left: calc(50% - 110px /2);
+            margin-left: calc(50% - 110px / 2);
           }
           .bag-money {
-            margin-left: calc(50% - 86px /2);
+            margin-left: calc(50% - 86px / 2);
           }
         }
       }

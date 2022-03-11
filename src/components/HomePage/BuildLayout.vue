@@ -130,6 +130,7 @@ const list_logo = [
     }
     .build__desc {
       @include little-text;
+      max-width: 570px;
     }
   }
 }
