@@ -30,12 +30,12 @@ import HomeWait from '@/components/HomePage/Popup/WaitComponent.vue'
 .home {
   background: url("../assets/images/Desktop-Home.png") no-repeat top;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   max-width: 100vw;
-  min-width: 100vw;
   display: flex;
   flex-flow: column wrap;
   padding-bottom: 20px;
+  overflow-x: hidden;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .home {
