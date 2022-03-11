@@ -45,25 +45,26 @@ const passcode = "96800";
 @import "../../../assets/style/style.scss";
 
 .container {
-  position: fixed;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   .cover {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0.5;
     background: black;
-    position: absolute;
+    position: fixed;
   }
   @include form;
   .form {
     z-index: 1;
-    position: fixed;
-    padding-top: 20px;
+    position: relative;
+    padding-top: 50px;
+    margin: 0;
     &-contain {
       .form-control {
         .passcode {

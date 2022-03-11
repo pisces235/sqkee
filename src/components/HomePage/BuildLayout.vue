@@ -124,7 +124,6 @@ const list_logo = [
           height: fit-content;
           img {
             width: 60px;
-            height: 60px;
           }
         }
       }
@@ -173,8 +172,16 @@ const list_logo = [
       flex-flow: row wrap;
       justify-content: space-between;
       margin: 20px 0;
+      
+      
       .logo {
+        width: calc(21%);
         margin-bottom: 10px;
+        a {
+          img {
+            width: 100%;
+          }
+        }
       }
     }
   }

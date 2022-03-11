@@ -6,7 +6,7 @@ export default createStore({
       showHomeTry: false,
       showHomeSuccess: false,
       showHomeWait: false,
-      success: false,
+      success: true,
       waitlistCount: 100
     }
   },

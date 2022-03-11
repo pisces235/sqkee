@@ -59,12 +59,16 @@
     height: 100vh;
     opacity: 0.5;
     background: black;
+    position: fixed;
   }
   @include form;
   .form {
     z-index: 1;
-    position: fixed;
-    padding-top: 20px;
+    position: relative;
+    padding-top: 50px;
+    margin: 0;
   }
+}
+@media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
 }
 </style>

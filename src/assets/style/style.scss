@@ -129,7 +129,6 @@ $like-yellow: #f7c527;
   }
   @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
     .form {
-      overflow: scroll;
       width: 100vw;
       margin: 0;
       bottom: -20px;

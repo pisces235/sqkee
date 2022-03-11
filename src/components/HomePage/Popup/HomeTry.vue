@@ -85,10 +85,11 @@ const store = useStore();
 const list_requency = ["Every day"];
 const list_range = ["1000 - 1200"];
 const list_region = ["North", "South", "East", "West"];
+
 const change = () => {
-  if(store.state.succes == true) {
+  if(store.state.success == true) {
     store.commit("changeShowHomeSuccess");
-  store.commit("changeShowHomeTry");
+    store.commit("changeShowHomeTry");
   } else {
     store.commit("changeShowHomeWait");
   store.commit("changeShowHomeTry");
@@ -118,9 +119,9 @@ const change = () => {
   }
   @include form;
   .form {
-    margin: 0;
+    margin: unset;
     z-index: 1;
-    position: fixed;
+    position: relative;
     padding-top: 20px;
     &-contain {
       .form-control {
@@ -137,5 +138,45 @@ const change = () => {
       }
     }
   }
+}
+@media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 0;
+  
+    overflow-y: scroll;
+  .cover {
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+    background: black;
+    position: absolute;
+    top: 0;
+  }
+  @include form;
+  .form {
+    margin: auto 0;
+    &-contain {
+      .form-control {
+        label {
+          .number::before {
+            background-color: white;
+            content: counter(number);
+            font-size: 16px;
+            line-height: 24px;
+            border-radius: 50%;
+            padding: 5px 9px;
+          }
+        }
+      }
+    }
+  }
+}
 }
 </style>

@@ -42,6 +42,8 @@
       margin: 10px auto 18px auto;
     }
     .info-desc {
+      max-width: 570px;
+      margin: 0 auto;
       @include little-text;
     }
     .info-btn {
@@ -65,14 +67,17 @@
 }
 @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .information {
+    margin-top: 115px;
     .info-text {
       width: 87.5vw;
+      max-width: unset;
       margin: 0 calc(12.5vw / 2);
     }
     .some-animation {
       width: 100vw;
       height: 41px;
-      background: url("../../assets/images/UI-Illustration-Section1.png") no-repeat center;
+      background: url("../../assets/images/UI-Illustration-Section1.png")
+        no-repeat center;
       background-size: cover;
       margin: 25px 0;
       img {
