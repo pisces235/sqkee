@@ -101,28 +101,29 @@ const change = () => {
 @import "../../../assets/style/style.scss";
 
 .container {
-  position: fixed;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
-  padding: 0;
   .cover {
     width: 100%;
     height: 100vh;
     opacity: 0.5;
     background: black;
-    position: absolute;
-    top: 0;
+    position: fixed;
   }
   @include form;
   .form {
-    margin: unset;
     z-index: 1;
     position: relative;
-    padding-top: 20px;
+    padding-top: 50px;
+    margin: 0;
+    .btn-close {
+      top: 30px;
+    }
     &-contain {
       .form-control {
         label {
@@ -141,42 +142,7 @@ const change = () => {
 }
 @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-  padding: 0;
-  
     overflow-y: scroll;
-  .cover {
-    width: 100%;
-    height: 100vh;
-    opacity: 0.5;
-    background: black;
-    position: absolute;
-    top: 0;
-  }
-  @include form;
-  .form {
-    margin: auto 0;
-    &-contain {
-      .form-control {
-        label {
-          .number::before {
-            background-color: white;
-            content: counter(number);
-            font-size: 16px;
-            line-height: 24px;
-            border-radius: 50%;
-            padding: 5px 9px;
-          }
-        }
-      }
-    }
-  }
 }
 }
 </style>
