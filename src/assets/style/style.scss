@@ -1,0 +1,214 @@
+$other-color: #54d6e2;
+$like-yellow: #f7c527;
+@mixin little-text {
+  color: lightgrey;
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin title-text {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 40px;
+}
+@mixin btn {
+  background: transparent;
+  border: 2px solid $other-color;
+  color: $other-color;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+@mixin hr {
+  background-color: $like-yellow;
+  width: 40px;
+  height: 1px;
+  filter: drop-shadow(0 0 3px $like-yellow);
+}
+@mixin flex-center {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+@mixin auto-number {
+  .number::before {
+    counter-increment: number; //Tăng number lên, mỗi lần tăng 1 đơn vị
+    content: "0" counter(number); //In kết quả
+    color: #218189;
+    font-weight: 700;
+    font-size: 32px;
+  }
+}
+
+@mixin form {
+  .form {
+    width: 770px;
+    margin: 60px calc((100% - 770px) / 2) 20px calc((100% - 770px) / 2);
+    background-color: #26949e;
+    padding: 64px 0 0 0;
+    border-radius: 15px;
+    bottom: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    .btn-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 25px;
+    }
+    &-text {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-flow: column wrap;
+      .form-title {
+        @include title-text;
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+      }
+      hr {
+        @include hr;
+        margin: 8px auto 10px auto;
+      }
+      .form-desc {
+        width: 100%;
+        @include little-text;
+        text-align: center;
+      }
+    }
+    &-contain {
+      width: 90%;
+      margin: 15px 5%;
+      
+      counter-reset: number;
+      .form-control {
+        width: 370px;
+        padding: 0 calc((100% - 370px) / 2) 0 calc((100% - 370px) / 2);
+        
+        input,
+        select {
+          margin: 18px 0;
+          padding: 10px;
+          background-color: #218189;
+          @include little-text;
+          outline: none;
+          border: none;
+        }
+        label, input {
+          display: block;
+          width: calc(370px - 10px * 2);
+        }
+        label{
+          @include auto-number;
+        }
+        input::placeholder {
+          @include little-text;
+        }
+        select {
+          width: 370px;
+          option:before {
+            padding: 10px;
+          }
+        }
+        .btn-contain {
+          width: 370px;
+          display: flex;
+          justify-content: center;
+          button {
+            @include btn;
+            color: white;
+            border-color: white;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .form {
+      overflow: scroll;
+      width: 100vw;
+      margin: 0;
+      bottom: -20px;
+      border-radius: 0;
+      .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 25px;
+      }
+      &-text {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        .form-title {
+          @include title-text;
+          font-size: 30px;
+          width: 100%;
+          text-align: center;
+        }
+        hr {
+          @include hr;
+          margin: 8px auto 10px auto;
+        }
+        .form-desc {
+          width: 87.5vw;
+          margin: 0 auto;
+          @include little-text;
+          text-align: center;
+        }
+      }
+      &-contain {
+        width: 100%;
+        margin: 0;
+        
+        counter-reset: number;
+        .form-control {
+          width: 87.5vw;
+          padding: 0 calc(12.5vw / 2);
+          
+          input,
+          select {
+            margin: 18px 0;
+            padding: 10px;
+            background-color: #218189;
+            @include little-text;
+            outline: none;
+            border: none;
+          }
+          label, input {
+            display: block;
+            width: calc(100% - 20px);
+          }
+          label{
+            @include auto-number;
+          }
+          input::placeholder {
+            @include little-text;
+          }
+          select {
+            width: 100%;
+            option:before {
+              padding: 10px;
+            }
+          }
+          .btn-contain {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            button {
+              @include btn;
+              color: white;
+              border-color: white;
+              margin: 15px 0 35px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
