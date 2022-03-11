@@ -192,7 +192,7 @@
           }
           .conversion {
             top: -85px;
-            right: -45px;
+            right: -65px;
             width: 110px;
             height: 110px;
           }
