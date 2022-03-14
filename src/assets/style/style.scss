@@ -5,6 +5,10 @@ $like-yellow: #f7c527;
   font-size: 16px;
   line-height: 24px;
 }
+
+.text-sm {
+  
+}
 @mixin title-text {
   font-size: 32px;
   font-weight: 900;
@@ -22,8 +26,10 @@ $like-yellow: #f7c527;
 @mixin hr {
   background-color: $like-yellow;
   width: 40px;
-  height: 1px;
+  height: 2px;
   filter: drop-shadow(0 0 3px $like-yellow);
+  border: none;
+  outline: none;
 }
 @mixin flex-center {
   display: flex;

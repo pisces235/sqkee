@@ -26,6 +26,8 @@
 <style lang="scss" scoped>
 @import "../../assets/style/style.scss";
 
+
+
 .banner {
   width: calc(100% - 115px * 2);
   margin: 0 auto;
@@ -91,7 +93,7 @@
 @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .banner {
     width: 100vw;
-    margin: 0;
+    margin: 0 0 50px 0;
     flex-flow: column wrap;
     justify-content: flex-start;
     clip-path: circle(90% at 50% 50%);

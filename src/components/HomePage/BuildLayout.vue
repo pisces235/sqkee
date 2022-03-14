@@ -111,14 +111,14 @@ const list_logo = [
     }
 
     .build__contain-logo {
-      width: 100%;
       display: flex;
       flex-flow: row nowrap;
-      justify-content: space-between;
+      justify-content: flex-start;
       margin: 20px 0;
       .logo {
         width: fit-content;
         height: fit-content;
+        margin-right: 30px;
         a {
           width: fit-content;
           height: fit-content;
@@ -127,6 +127,7 @@ const list_logo = [
           }
         }
       }
+      
     }
     .build__desc {
       @include little-text;
@@ -168,21 +169,25 @@ const list_logo = [
     }
 
     .build__contain-logo {
-      width: 100%;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      margin: 20px 0;
       
+      width: 100%;
+      max-width: 280px;
       
       .logo {
-        width: calc(21%);
+        width: 60px;
         margin-bottom: 10px;
+        margin-right: 0;
         a {
           img {
-            width: 100%;
+            width: 60px;
           }
         }
+      }
+      .logo:nth-child(4), .logo:nth-child(8) {
+        margin-right: 0;
       }
     }
   }

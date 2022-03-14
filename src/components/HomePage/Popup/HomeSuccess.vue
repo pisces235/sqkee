@@ -63,8 +63,11 @@ const passcode = "96800";
   .form {
     z-index: 1;
     position: relative;
-    padding-top: 50px;
     margin: 0;
+    padding: 0;
+    .form-text {
+    margin: 50px 0 0 0;
+    }
     &-contain {
       .form-control {
         .passcode {

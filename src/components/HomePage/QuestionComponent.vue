@@ -19,7 +19,7 @@
               @click="URD[i] = !URD[i]"
             ></i>
           </div>
-        </div>
+        </div> 
         <div class="item-text" v-show="URD[i] == false">
           <p>{{ item.text }}</p>
         </div>
@@ -33,7 +33,7 @@ import { ref } from "vue";
 const list_question = [
   {
     title: "Question",
-    text: "Some text",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. A voluptates quos inventore perferendis, repellendus autem qui repellat sequi ullam porro molestias temporibus amet, quod asperiores dolores ex cupiditate corrupti fuga!",
   },
   {
     title: "Question",

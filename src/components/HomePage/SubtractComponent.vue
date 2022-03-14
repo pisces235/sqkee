@@ -1,5 +1,8 @@
 <template>
   <div class="subtract">
+    <div class="subtract-bg">
+      <img src="../../assets/images/Subtract.png" alt="" />
+    </div>
     <div class="subtract-front">
       <div class="subtract-image-contain">
         <div class="subtract-img"></div>
@@ -28,9 +31,8 @@
             <img src="../../assets/images/coin.png" alt="" class="coin" />
             <h4 class="title">Decide Kee credits amount</h4>
             <div class="desc">
-              Decide how much you want to buy for <br />
-              food (1 Kee credit=S$1) <br />
-              The Kee credits have no expiry date!
+              Decide how much you want to buy for food (1 Kee credit=S$1) The
+              Kee credits have no expiry date!
             </div>
           </div>
         </div>
@@ -80,6 +82,12 @@
 
 .subtract {
   width: 100%;
+  &-bg {
+    img {
+      width: 100%;
+      position: absolute;
+    }
+  }
   &-front {
     width: 100%;
     display: flex;
@@ -87,6 +95,8 @@
     color: white;
     .subtract-image-contain {
       width: 100%;
+      z-index: 1;
+      margin-top: 1%;
       .subtract-img {
         background: url("../../assets/images/profile.png") no-repeat center;
         margin: 0 auto 15px auto;
@@ -108,7 +118,7 @@
         background-color: #218189;
         clip-path: inset(2px 2px 5px round 7px 0);
         position: absolute;
-        padding: 5px 10px;
+        padding: 5px 8px;
         font-size: 9px;
         top: 4px;
         left: calc(50% + 240px / 2 + 10px);
@@ -172,9 +182,21 @@
           .title {
             margin-top: 7px;
             margin-bottom: 7px;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
           }
           .desc {
-            height: 23px;
+            height: fit-content;
+            max-height: 75px !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
             line-height: 23px;
           }
           div {
@@ -185,7 +207,7 @@
           }
           .coin {
             left: -50px;
-            bottom: -130px;
+            bottom: -80px;
 
             width: 86px;
             height: 86px;
@@ -199,8 +221,8 @@
           .bag-money {
             width: 86px;
             height: 101px;
-            right: -115px;
-            bottom: -85px;
+            right: -125px;
+            bottom: -35px;
           }
         }
       }
@@ -221,21 +243,44 @@
 
 @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .subtract {
-    width: 100vw;
-    .subtract-title,
+    &-front {
+      .subtract-image-contain {
+        width: 100%;
+        z-index: 1;
+        margin-top: -13%;
+        .subtract-img {
+          background: url("../../assets/images/profile.png") no-repeat center;
+          margin: 0 auto 15px auto;
+          background-size: cover;
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
     .subtract-list--contain {
       width: 87.5vw;
       margin: 0 calc(12.5vw / 4);
     }
     .subtract-title {
+      width: 100vw;
       margin-top: 30px;
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
       .subtract-label {
         top: -37px;
-        left: calc(50% - 28px / 2);
+        left: calc(50% - 44px / 2);
       }
+      // .subtract-label {
+      //   @include little-text;
+      //   background-color: #218189;
+      //   clip-path: inset(2px 2px 5px round 7px 0);
+      //   position: absolute;
+      //   padding: 5px 10px;
+      //   font-size: 9px;
+      //   top: 4px;
+      //   left: calc(50% + 240px / 2 + 10px);
+      // }
     }
     .subtract-desc-contain {
       .subtract-desc {

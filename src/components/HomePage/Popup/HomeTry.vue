@@ -102,12 +102,14 @@ const change = () => {
 
 .container {
   width: 100%;
-  height: 100%;
+  max-height:100vh;
   z-index: 1;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+    overflow-y: scroll;
   .cover {
     width: 100%;
     height: 100vh;
@@ -116,13 +118,13 @@ const change = () => {
     position: fixed;
   }
   @include form;
-  .form {
+  .form{
     z-index: 1;
-    position: relative;
-    padding-top: 50px;
-    margin: 0;
+    position: static;
+    margin: auto 0;
     .btn-close {
-      top: 30px;
+      top: 2%;
+      margin-bottom: 25px;
     }
     &-contain {
       .form-control {
@@ -142,7 +144,9 @@ const change = () => {
 }
 @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .container {
-    overflow-y: scroll;
+    .form {
+    width: 100vw;
+    }
 }
 }
 </style>
